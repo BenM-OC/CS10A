@@ -1,0 +1,8 @@
+This is a &%file    that          should!!,...
+
+
+This file must have several spaces at the end of the file.
+have 21 words.   
+
+
+
