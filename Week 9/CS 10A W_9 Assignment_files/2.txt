@@ -1,8 +1,0 @@
-This is a &%file    that          should!!,...   
-
-
-
-have exactly 10 words.
-
-
-
