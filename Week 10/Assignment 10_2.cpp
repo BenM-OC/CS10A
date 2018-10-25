@@ -110,13 +110,21 @@ void drawRocket(int stageHeight, int rocketWidth, int numberOfStages)
 
 void drawCone(int rocketWidth) 
 {
+
+	int coneWidth = 0;
 	int rowCounter = 0;
 	int spacesCounter = 0;
 	int XsPosition = 0;
 
-	for (rowCounter = 1; rowCounter < rocketWidth; rowCounter++) 
+	if ((rocketWidth%2 )== 0){
+		coneWidth = (rocketWidth  * 0.5) ;
+	} else if ((rocketWidth%2) != 0) {
+		coneWidth = (rocketWidth * 0.5)  + 1;
+	}
+	
+	for (rowCounter = 1; rowCounter < coneWidth; rowCounter++) 
 	{
-		for (spacesCounter = rowCounter; spacesCounter < rocketWidth; spacesCounter++){
+		for (spacesCounter = rowCounter; spacesCounter < coneWidth; spacesCounter++){
 			cout << " ";
 		}
 
@@ -131,7 +139,8 @@ void drawCone(int rocketWidth)
 			cout << endl;
 		}
 
-		for (rowCounter = 0; rowCounter < 2 * rocketWidth -1; rowCounter++){
+		cout << "";
+		for (rowCounter = 0; rowCounter < 2 * coneWidth -1; rowCounter++){
 			cout << "X";
 		}
 
