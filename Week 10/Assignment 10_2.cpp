@@ -116,11 +116,7 @@ void drawCone(int rocketWidth)
 	int spacesCounter = 0;
 	int XsPosition = 0;
 
-	if ((rocketWidth%2 )== 0){
-		coneWidth = (rocketWidth  * 0.5) ;
-	} else if ((rocketWidth%2) != 0) {
-		coneWidth = (rocketWidth * 0.5)  + 1;
-	}
+	coneWidth = (rocketWidth * 0.5)  + 1;
 	
 	for (rowCounter = 1; rowCounter < coneWidth; rowCounter++) 
 	{
@@ -139,12 +135,6 @@ void drawCone(int rocketWidth)
 			cout << endl;
 		}
 
-		cout << "";
-		for (rowCounter = 0; rowCounter < 2 * coneWidth -1; rowCounter++){
-			cout << "X";
-		}
-
-		cout << endl;
 }
 
 
@@ -203,3 +193,65 @@ void drawOneRow(int numSpaces)
 
 	cout << "X" << endl;
 }
+
+
+
+/* OUTPUT 
+benji@ryzenbox:~/git/CS10A/Week 10$ ./'Assignment 10_2.out'
+Thank you for 'launching' NASA's build a rocket program!
+Please enter your desired height for each stage of your rocket: 6
+Great! Now, please enter your the desired width for each stage of your rocket: 6
+Thank you! Last bit of business, I promise. How many stages would you like in your rocket?: 1
+
+  X
+ X X
+XXXXX
+XXXXXX
+X    X
+X    X
+X    X
+X    X
+XXXXXX
+  X
+ X X
+XXXXX
+
+There you go, your very own rocket!
+benji@ryzenbox:~/git/CS10A/Week 10$ ./'Assignment 10_2.out'
+Thank you for 'launching' NASA's build a rocket program!
+Please enter your desired height for each stage of your rocket: 9
+Great! Now, please enter your the desired width for each stage of your rocket: 9
+Thank you! Last bit of business, I promise. How many stages would you like in your rocket?: 2
+
+    X
+   X X
+  X   X
+ X     X
+XXXXXXXXX
+XXXXXXXXX
+X       X
+X       X
+X       X
+X       X
+X       X
+X       X
+X       X
+XXXXXXXXX
+XXXXXXXXX
+X       X
+X       X
+X       X
+X       X
+X       X
+X       X
+X       X
+XXXXXXXXX
+    X
+   X X
+  X   X
+ X     X
+XXXXXXXXX
+
+There you go, your very own rocket!
+benji@ryzenbox:~/git/CS10A/Week 10$ 
+*/
