@@ -30,7 +30,7 @@ int main()
 				infile >> currentWord;
 			}
 			//after the wordCounter is incremented once for every string in the file, the file is closed. 
-			infile.close();
+                        infile.close();
 		}
 		//the file reports the amount of words counted in the file to the user, and prompts for another file to compute. 
 		cout << "There are " << wordCounter << " words." << endl;

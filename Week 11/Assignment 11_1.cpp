@@ -54,16 +54,22 @@ void doOneProblem(char operationSymbol)
 
 
 
-//
+//generateOperands generates a random number between 0 and 100, assigns it to firstNum, generates a new random number between 1 and 100 and assigns it to secondNum
 void generateOperands(int &firstNum, int &secondNum)
 {
 	int randNum;
+
 	randNum = rand() % 101;
-    firstNum = randNum;
-    randNum = rand() % 101;
-    secondNum = randNum;
+	firstNum = randNum;
+	randNum = rand() % 101;
+	secondNum = randNum;
 }
 
+
+
+
+
+//The calculateCorrectAnswer function takes the firstNum and secondNum value and operates on them based on the value of the operationSymbol
 void calculateCorrectAnswer(int firstNum, int secondNum, int &correctAnswer, char operationSymbol)
 {
 	switch (operationSymbol){
@@ -89,6 +95,11 @@ void calculateCorrectAnswer(int firstNum, int secondNum, int &correctAnswer, cha
 	}
 }
 
+
+
+
+
+//The checkAnswer function checks for user input and  prints "correct" if the value of the user input evaluates to be equal to the correct answer calculated in the calculateCorrectAnswer function. If it does not match the value of correctAnswer the word "incorrect" is printed to the terminal.
 void checkAnswer(int correctAnswer)
 {
 	int usersAnswer;
