@@ -74,7 +74,7 @@ void printHeader(int setIterationCounter)
 
 
 
-void getMaxNum(int &maxOperandNum)
+vfoid getMaxNum(int &maxOperandNum)
 {
 	cout << "What is the maximum operand number for this set?: " ;
 	cin >> maxOperandNum;
