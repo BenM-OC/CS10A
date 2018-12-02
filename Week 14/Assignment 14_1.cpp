@@ -131,7 +131,6 @@ void printMonthHeader(int month)
 
 void printMonthBody(int year, int month, int startDay)
 {
-
 	for (int i = 0; i < (startDay * 2); i++) {
 		cout << " ";
 	}
@@ -139,6 +138,9 @@ void printMonthBody(int year, int month, int startDay)
 	switch (month) {
 		case 0: 
 			for (int i = 1; i <= 31; i++) {
+				if (i % 7 == 0) {
+					cout << endl;
+				}
 				cout << i << " ";
 			}
 			break;
