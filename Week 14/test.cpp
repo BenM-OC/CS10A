@@ -121,7 +121,7 @@ void printMonthBody(int calendarYear, int firstDay, int currentMonth)
 					firstDay = 0;
 				}	
 			}
-		} break;
+		} 
 		
 		
 		case 1: 
