@@ -6,7 +6,6 @@ int getYear();
 int getFirstDay();
 void printMonth(int calendarYear, int firstDay);
 void printMonthHeader(int currentMonth);
-void printMonthBody(int calendarYear, int firstDay, int currentMonth);
 bool isLeapYear(int calendarYear);
 
 
@@ -56,41 +55,42 @@ void printMonthHeader(int currentMonth)
 
 		case 1 :
 			cout << "        February" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
+			break;
 
 		case 2 :
-			cout << "    March" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        March" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 3 :
-			cout << "    April" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        April" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 4 :
-			cout << "    May" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        May" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 5 :
-			cout << "    June" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        June" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 6 :
-			cout << "    July" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        July" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 7 :
-			cout << "    August" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        August" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 8 :
-			cout << "    September" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        September" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 9 :
-			cout << "    October" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        October" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 10 :
-			cout << "    November" << endl << "S M T W T F S" << endl << "---------------------" << endl;
+			cout << "        November" << endl << "  S  M  T  W  T  F  S" << endl << "---------------------" << endl;
 			break;
 
 		case 11 :
@@ -101,60 +101,69 @@ void printMonthHeader(int currentMonth)
 
 void printMonthBody(int calendarYear, int firstDay, int currentMonth)
 {
-	int xPos; 
-
-	for (int i = 0; i < (firstDay * 3); i ++) {
-		cout << " ";
-		xPos++;
-	}
-
 	switch (currentMonth) {
-		case 0:
+		case 0: {
+			for (int i = 0; i < (firstDay * 3); i ++) {
+				cout << " ";
+			}
+
 			for (int i = 1; i <= 31; i++) {
 				if (i < 10) {
 					cout << "  " << i;	
-					xPos++;
+					firstDay++;
 				} else {
 					cout << " " << i;
-					xPos++;
+					firstDay++;
 				}
 
-				if ((xPos % 7) == 0) {
+				if ((firstDay % 7) == 0) {
 					cout << endl;
+					firstDay = 0;
 				}	
 			}
-			break;
-
+		} break;
+		
+		
 		case 1: 
-			if (isLeapYear(calendarYear)) {
+			if (isLeapYear(calendarYear)) {	
+				for (int i = 0; i < (firstDay * 3); i ++) {
+					cout << " ";
+				}
+
 				for (int i = 1; i <= 29; i++) {
 					if (i < 10) {
 						cout << "  " << i;	
-						xPos += 1;
+						firstDay++;
 					} else {
 						cout << " " << i;
-						xPos += 1;
+						firstDay++;
 					}
 
-					if ((xPos % 7) == 0) {
+					if ((firstDay % 7) == 0) {
 						cout << endl;
-					}
+						firstDay = 0;
+					}	
 				}
-				
 			} else {
-				for (int i = 1; i <= 28; i++) {
-					if (i < 10) {
-						cout << "  " << i;	
-						xPos += 1;
-					} else {
-						cout << " " << i;
-						xPos += 1;
-					}
+						
+							for (int i = 0; i < firstDay; i ++) {
+								cout << "   ";
+							}
 
-					if ((xPos % 7) == 0) {
-						cout << endl;
-					}
-				}
+							for (int i = 1; i <= 28; i++) {
+								if (i < 10) {
+									cout << "  " << i;	
+									firstDay++;
+								} else {
+									cout << " " << i;
+									firstDay++;
+								}
+
+								if ((firstDay % 7) == 0) {
+									cout << endl;
+								}	
+							
+							}
 			}
 			break;
 
@@ -218,15 +227,8 @@ void printMonthBody(int calendarYear, int firstDay, int currentMonth)
 			}	
 			break;	
 	}
-	
 	cout << endl << endl;
 }
-
-
-
-
-
-
 
 
 
